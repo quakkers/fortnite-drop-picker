@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <title>Fortnite Drop Picker</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+<body>
+        <script type="text/javascript">
+            function pickLocation() {
+                var locationArr = ["Junk Junction", "The Block", "Lazy Lagoon", "Pressure Plant", "Sunny Steps", "Haunted Hills", "Pleasant Park", "Loot Lake", "Dusty Divot", "Lonely Lodge", "Snobby Shores", "NEO Tilted", "Mega Mall", "Frosty Flights", "Polar Peak", "Shifty Shafts", "Salty Springs", "Happy Hamlet", "Lucky Landing", "Fatal Fields", "Paradise Palms", "Viking Village", "Soccer Stadium", "Race Track", "West World", "DJ / Factories", "Greasy Grove (Skating Rink)"];
+                var location = locationArr[Math.floor(Math.random() * locationArr.length)];
+                document.getElementById("location").innerHTML = location;
+            
+                
+                $("#location").addClass("animated bounceInRight");
+                setTimeout(() => {
+                    $("#location").removeClass("animated bounceInRight");
+                }, 500);
+
+                $("button").click(function() {
+                    var delay = $(this);
+                    delay.prop("disabled", true);
+                    setTimeout(function() {
+                        delay.prop("disabled", false);
+                    }, 500);
+                });
+            }
+        </script>
+    <center>
+        <div id="middle">
+            <h1>Fortnite Drop Picker</h1>
+            <h1 id="location">Waiting...</h1>
+            <button onclick="pickLocation()" type="button" class="btn btn-primary btn-lg">Where we droppin'</button>
+        </div>
+        <p id="footer"><a href="https://twitter.com/quakkerss">Twitter</a> | <a href="https://github.com/quakkers">GitHub</a></p>
+    </center>
+</body>
